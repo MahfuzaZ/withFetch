@@ -33,7 +33,7 @@ function Products() {
               <h1>{elem.category}</h1>
               <h4>{elem.title}</h4>
               <div  className={sass.btn}>
-                <Link to={`/products/:${elem.id}`}>Learn More</Link>
+                <Link to={`/products/${elem.id}`}>Learn More</Link>
                 <button>Buy Now</button>
               </div>
               </li>))}

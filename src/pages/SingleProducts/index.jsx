@@ -8,7 +8,7 @@ function SingleProducts() {
   const {id} = useParams()
   const [posts, setPosts] = useState([])
   useEffect(() =>{
-      fetch("https://fakestoreapi.com/products")
+      fetch("https://fakestoreapi.com/products/" + id)
         .then(res => res.json())
         .then(data => setPosts(data))
   })
