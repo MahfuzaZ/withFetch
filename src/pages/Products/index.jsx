@@ -6,20 +6,27 @@ import { Link } from 'react-router-dom'
 
 function Products() {
   const [posts, setPosts] = useState([])
-  const [category, setCategory] = useState("nimadur")
+  const [category, setCategory] = useState("men's clothing")
   const [increment, setIncrement] = useState(0)
+  const [cart, setCart] = useState([]);
 
   const change = () => {
      setIncrement(increment + 1)
   }
 
-
-  
   useEffect(() =>{
       fetch("https://fakestoreapi.com/products")
         .then(res => res.json())
         .then(data => setPosts(data))
   }, [category])
+
+  const pushItem = (e) => {
+    if(posts.length > 0){
+      setCart([...cart, posts[e.target.getAttribute("order")]])
+    }
+  }
+
+  console.log(cart);
   return (
     <div className={sass.products}>
         <div className={sass.top}>
@@ -41,7 +48,7 @@ function Products() {
                   <h4>{elem.title}</h4>
                   <div  className={sass.btn}>
                     <Link to={`/products/${elem.id}`}>Learn More</Link>
-                    <button onClick={change}>Buy Now</button>
+                    <button order={elem.id} onClick={(e) => [change(), pushItem(e)]}>Buy Now</button>
                   </div>
                   </li>)
              }})}
