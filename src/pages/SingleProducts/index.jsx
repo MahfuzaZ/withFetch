@@ -15,7 +15,18 @@ function SingleProducts() {
   return (
     <div className={sass.single}>
       <ul>
-         <li>{posts.title} <img src={posts.image} alt="" /></li>
+         <li>
+          <div className={sass.right}>
+          <img src={posts.image} alt="" />
+          </div>
+          <div className={sass.left}>
+          <h1>{posts.category}</h1>
+          <h4>{posts.title}</h4>
+          <p>{posts.description}</p>
+          <h3>{`Price: ${posts.price}`}</h3>
+          </div>
+
+          </li>
       </ul>
     </div>
   )

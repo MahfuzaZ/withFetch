@@ -1,6 +1,6 @@
 import React from 'react'
 import sass from "../comp.module.scss"
-import logo from "../../pages/img/logo.webp"
+import logo from "../../pages/img/logo1.avif"
 
 function Footer() {
   return (

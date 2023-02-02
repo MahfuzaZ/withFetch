@@ -74,8 +74,9 @@
         justify-content: space-between;
         padding: 5rem 1rem;
         img{
-            width: 7rem;
-            border-radius: 50%;
+            width: 14rem;
+            height: 6rem;
+            border-radius: 60%;
         }
 
         ul{
@@ -95,6 +96,29 @@
                     color: #cd8686dc;
                 }
             }
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .header{
+        header{
+            width: 100%;
+
+
+            ul{
+               display: none;
+            }
+        }
+    }
+
+    .footer{
+        footer{
+            flex-direction: column;
+            align-self: start;
+            align-items: start;
+            gap: 2rem;
         }
     }
 }
